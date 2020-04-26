@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ndv-ZD-pDd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CountryVC-->
+        <scene sceneID="pWA-Sm-TZm">
+            <objects>
+                <viewController id="1aV-6N-U1c" customClass="CountryVC" customModule="CoronaStats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6dB-TS-ZA6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados por País" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2g-UB-R0K">
+                                <rect key="frame" x="20" y="94" width="217.5" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Coo-Hj-tnI">
+                                <rect key="frame" x="20" y="155" width="374" height="586"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" id="uB3-hY-Ruc" customClass="HeaderTVCell" customModule="CoronaStats" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uB3-hY-Ruc" id="0Rv-XJ-dq7">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g4o-vF-VMc">
+                                                    <rect key="frame" x="172.5" y="16" width="201.5" height="12"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recuperados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9d-DL-6OI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="12"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Óbitos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioc-TB-zIs">
+                                                            <rect key="frame" x="82.5" y="0.0" width="34" height="12"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casos/milhão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvy-Lv-VGs">
+                                                            <rect key="frame" x="131.5" y="0.0" width="70" height="12"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="g4o-vF-VMc" secondAttribute="trailing" id="LNW-Ph-wOj"/>
+                                                <constraint firstItem="g4o-vF-VMc" firstAttribute="centerY" secondItem="0Rv-XJ-dq7" secondAttribute="centerY" id="Tst-Kp-iJf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="casosPorMilhaoLabel" destination="Nvy-Lv-VGs" id="wvr-Pb-lTa"/>
+                                            <outlet property="obitosLabel" destination="Ioc-TB-zIs" id="VQe-8W-Vo9"/>
+                                            <outlet property="recuperadosLabel" destination="w9d-DL-6OI" id="Ccc-Z8-WlL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" id="472-LZ-BX3" customClass="DataTVCell" customModule="CoronaStats" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="472-LZ-BX3" id="fbs-xA-Dst">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome País" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0P-NZ-gu0">
+                                                    <rect key="frame" x="20" y="11.5" width="86.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="o5e-Ps-NLj">
+                                                    <rect key="frame" x="180" y="11.5" width="174" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkC-Jh-P5o">
+                                                            <rect key="frame" x="0.0" y="0.0" width="38.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CD-dx-bS1">
+                                                            <rect key="frame" x="78.5" y="0.0" width="20" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7,2%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8O-Ej-3pY">
+                                                            <rect key="frame" x="138.5" y="0.0" width="35.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="z0P-NZ-gu0" firstAttribute="centerY" secondItem="fbs-xA-Dst" secondAttribute="centerY" id="6ga-XI-4ky"/>
+                                                <constraint firstAttribute="trailing" secondItem="o5e-Ps-NLj" secondAttribute="trailing" constant="20" id="XSF-2z-OEl"/>
+                                                <constraint firstItem="z0P-NZ-gu0" firstAttribute="leading" secondItem="fbs-xA-Dst" secondAttribute="leadingMargin" id="b4j-Wt-ahU"/>
+                                                <constraint firstItem="o5e-Ps-NLj" firstAttribute="centerY" secondItem="fbs-xA-Dst" secondAttribute="centerY" id="dcU-Zg-bVK"/>
+                                                <constraint firstItem="o5e-Ps-NLj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z0P-NZ-gu0" secondAttribute="trailing" constant="8" symbolic="YES" id="zbQ-pO-a5h"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="casosPorMilhaoLabel" destination="L8O-Ej-3pY" id="hJs-wB-5ic"/>
+                                            <outlet property="nomePaisLabel" destination="z0P-NZ-gu0" id="iRr-Vt-zY2"/>
+                                            <outlet property="obitosLabel" destination="5CD-dx-bS1" id="iDf-EN-xri"/>
+                                            <outlet property="recuperadosLabel" destination="DkC-Jh-P5o" id="lei-iC-iw5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Coo-Hj-tnI" firstAttribute="centerY" secondItem="6dB-TS-ZA6" secondAttribute="centerY" id="4Ug-m5-3VH"/>
+                            <constraint firstItem="d2g-UB-R0K" firstAttribute="top" secondItem="q65-kG-B8t" secondAttribute="top" constant="50" id="CrL-J3-Q69"/>
+                            <constraint firstItem="Coo-Hj-tnI" firstAttribute="leading" secondItem="d2g-UB-R0K" secondAttribute="leading" id="KER-hW-vHr"/>
+                            <constraint firstItem="q65-kG-B8t" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d2g-UB-R0K" secondAttribute="trailing" symbolic="YES" id="KGD-CV-5ZG"/>
+                            <constraint firstItem="d2g-UB-R0K" firstAttribute="leading" secondItem="q65-kG-B8t" secondAttribute="leading" constant="20" id="fsM-iU-tLR"/>
+                            <constraint firstItem="Coo-Hj-tnI" firstAttribute="centerX" secondItem="6dB-TS-ZA6" secondAttribute="centerX" id="rPk-gL-wpF"/>
+                            <constraint firstItem="Coo-Hj-tnI" firstAttribute="top" secondItem="d2g-UB-R0K" secondAttribute="bottom" constant="20" id="zTX-vy-Obf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q65-kG-B8t"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="CountryFill" selectedImage="CountryFill" id="fHd-GL-ICC"/>
+                    <connections>
+                        <outlet property="tableView" destination="Coo-Hj-tnI" id="JIa-5L-sQ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3K-wA-FXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663.768115942029" y="-137.27678571428569"/>
+        </scene>
+        <!--GeneralVC-->
+        <scene sceneID="Bha-FD-i4Y">
+            <objects>
+                <viewController id="oes-mx-iJ4" customClass="GeneralVC" customModule="CoronaStats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jci-IH-hOS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PBp-t7-Pob">
+                                <rect key="frame" x="20.5" y="313.5" width="373" height="269"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visão Geral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE0-nb-sS7">
+                                <rect key="frame" x="20" y="94" width="167" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AE0-nb-sS7" firstAttribute="top" secondItem="VRD-rg-6M9" secondAttribute="top" constant="50" id="BOf-i5-qOg"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="centerY" secondItem="jci-IH-hOS" secondAttribute="centerY" id="IEP-SN-95h"/>
+                            <constraint firstItem="VRD-rg-6M9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AE0-nb-sS7" secondAttribute="trailing" symbolic="YES" id="PJo-hP-jWG"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="centerX" secondItem="jci-IH-hOS" secondAttribute="centerX" id="cf6-s7-2Am"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="height" secondItem="jci-IH-hOS" secondAttribute="height" multiplier="0.3" id="dPy-TS-xxv"/>
+                            <constraint firstItem="AE0-nb-sS7" firstAttribute="leading" secondItem="VRD-rg-6M9" secondAttribute="leading" constant="20" id="gUa-60-JQO"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="width" secondItem="jci-IH-hOS" secondAttribute="width" multiplier="0.9" id="jaG-FO-YcC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VRD-rg-6M9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="GeneralEmpty" selectedImage="GeneralFill" id="dxx-bF-CcQ"/>
+                    <connections>
+                        <outlet property="graphImageView" destination="PBp-t7-Pob" id="74k-Rz-TwE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-hU-etH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663.768115942029" y="-785.49107142857144"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dC5-rK-PkD">
+            <objects>
+                <tabBarController id="Ndv-ZD-pDd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qfw-e9-d8p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="oes-mx-iJ4" kind="relationship" relationship="viewControllers" id="ur8-fM-4Am"/>
+                        <segue destination="1aV-6N-U1c" kind="relationship" relationship="viewControllers" id="RsR-cJ-4Im"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xs8-UJ-BQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1579" y="-462"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CountryFill" width="30" height="30"/>
+        <image name="GeneralEmpty" width="30" height="30"/>
+        <image name="GeneralFill" width="30" height="30"/>
+    </resources>
+</document>
