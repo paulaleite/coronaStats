@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CountryVC-->
         <scene sceneID="pWA-Sm-TZm">
             <objects>
-                <viewController id="1aV-6N-U1c" sceneMemberID="viewController">
+                <viewController id="1aV-6N-U1c" customClass="CountryVC" customModule="CoronaStats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6dB-TS-ZA6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="20" y="155" width="374" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" id="472-LZ-BX3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" id="472-LZ-BX3" customClass="DataTVCell" customModule="CoronaStats" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="472-LZ-BX3" id="fbs-xA-Dst">
@@ -70,6 +70,12 @@
                                                 <constraint firstItem="o5e-Ps-NLj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z0P-NZ-gu0" secondAttribute="trailing" constant="8" symbolic="YES" id="zbQ-pO-a5h"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="casosPorMilhaoLabel" destination="L8O-Ej-3pY" id="hJs-wB-5ic"/>
+                                            <outlet property="nomePaisLabel" destination="z0P-NZ-gu0" id="iRr-Vt-zY2"/>
+                                            <outlet property="obitosLabel" destination="5CD-dx-bS1" id="iDf-EN-xri"/>
+                                            <outlet property="recuperadosLabel" destination="DkC-Jh-P5o" id="lei-iC-iw5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -87,15 +93,18 @@
                         <viewLayoutGuide key="safeArea" id="q65-kG-B8t"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="CountryFill" selectedImage="CountryFill" id="fHd-GL-ICC"/>
+                    <connections>
+                        <outlet property="tableView" destination="Coo-Hj-tnI" id="JIa-5L-sQ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3K-wA-FXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-663.768115942029" y="-137.27678571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--GeneralVC-->
         <scene sceneID="Bha-FD-i4Y">
             <objects>
-                <viewController id="oes-mx-iJ4" sceneMemberID="viewController">
+                <viewController id="oes-mx-iJ4" customClass="GeneralVC" customModule="CoronaStats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jci-IH-hOS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +132,9 @@
                         <viewLayoutGuide key="safeArea" id="VRD-rg-6M9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="GeneralEmpty" selectedImage="GeneralFill" id="dxx-bF-CcQ"/>
+                    <connections>
+                        <outlet property="graphImageView" destination="PBp-t7-Pob" id="74k-Rz-TwE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-hU-etH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
