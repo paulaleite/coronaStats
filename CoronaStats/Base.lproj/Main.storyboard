@@ -30,14 +30,34 @@
                     <view key="view" contentMode="scaleToFill" id="jci-IH-hOS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PBp-t7-Pob">
+                                <rect key="frame" x="20.5" y="313.5" width="373" height="269"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visão Geral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE0-nb-sS7">
+                                <rect key="frame" x="20" y="94" width="167" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="AE0-nb-sS7" firstAttribute="top" secondItem="VRD-rg-6M9" secondAttribute="top" constant="50" id="BOf-i5-qOg"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="centerY" secondItem="jci-IH-hOS" secondAttribute="centerY" id="IEP-SN-95h"/>
+                            <constraint firstItem="VRD-rg-6M9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AE0-nb-sS7" secondAttribute="trailing" symbolic="YES" id="PJo-hP-jWG"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="centerX" secondItem="jci-IH-hOS" secondAttribute="centerX" id="cf6-s7-2Am"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="height" secondItem="jci-IH-hOS" secondAttribute="height" multiplier="0.3" id="dPy-TS-xxv"/>
+                            <constraint firstItem="AE0-nb-sS7" firstAttribute="leading" secondItem="VRD-rg-6M9" secondAttribute="leading" constant="20" id="gUa-60-JQO"/>
+                            <constraint firstItem="PBp-t7-Pob" firstAttribute="width" secondItem="jci-IH-hOS" secondAttribute="width" multiplier="0.9" id="jaG-FO-YcC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VRD-rg-6M9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="GeneralEmpty" selectedImage="GeneralFill" id="dxx-bF-CcQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-hU-etH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-663" y="-785"/>
+            <point key="canvasLocation" x="-663.768115942029" y="-785.49107142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dC5-rK-PkD">
