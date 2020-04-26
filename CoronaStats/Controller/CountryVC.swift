@@ -18,6 +18,8 @@ class CountryVC: UIViewController, ViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        showLoadingAlert()
+        
         self.tableViewDelegate = TableViewDelegate(withDelegate: self)
         self.tableViewDataSource = TableViewDataSource(nomePais: ["Brasil", "EUA"], qtdRecuperados: ["214", "243"], qtdObtios: ["8", "20"], qtdCasosPorMilhao: ["3.7", "8.2"])
         

@@ -14,6 +14,8 @@ class GeneralVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        showLoadingAlert()
     }
 
 }
