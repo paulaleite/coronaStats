@@ -20,4 +20,23 @@ class TableViewDelegate: NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate?.selectedCell(row: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderTVCell
+        headerCell?.recuperadosLabel.text = "Recuperados"
+        headerCell?.obitosLabel.text = "Óbitos"
+        headerCell?.casosPorMilhaoLabel.text = "Casos/Milhão"
+        
+        guard let safeCell = headerCell else {
+            return UITableViewCell()
+        }
+        
+        return safeCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderTVCell
+        
+        return headerCell?.bounds.height ?? 44
+    }
 }
