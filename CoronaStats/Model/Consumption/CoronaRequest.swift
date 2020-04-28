@@ -22,12 +22,10 @@ struct DataCodable: Codable {
 
 class CoronaRequest {
     private static var _shared = CoronaRequest()
-    let path = "localhost:5050"
+    let path = "http://localhost:5050"
     let chartEndpoint = "/chart"
     
-    private init() {
-        getGraphImage()
-    }
+    private init() {}
     
     class func shared() -> CoronaRequest {
         return _shared

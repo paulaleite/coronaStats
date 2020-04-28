@@ -15,10 +15,11 @@ class GeneralVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        showLoadingAlert()
+        showLoadingAlert()
         
         DispatchQueue.main.async {
             self.graphImageView.image = CoronaRequest.shared().getGraphImage()
+            self.removeLoadingAlert()
         }
     }
 
