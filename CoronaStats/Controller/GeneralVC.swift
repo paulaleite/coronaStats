@@ -16,6 +16,10 @@ class GeneralVC: UIViewController {
         super.viewDidLoad()
         
 //        showLoadingAlert()
+        
+        DispatchQueue.main.async {
+            self.graphImageView.image = CoronaRequest.shared().getGraphImage()
+        }
     }
 
 }
