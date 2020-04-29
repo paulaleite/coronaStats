@@ -22,9 +22,8 @@ struct DataCodable: Codable {
 
 class CoronaRequest {
     private static var _shared = CoronaRequest()
-    let pathChart = "http://localhost:5050"
+    let path = "http://coronaapi-env.eba-ivmpuh8v.us-east-1.elasticbeanstalk.com"
     let chartEndpoint = "/chart"
-    let pathData = "http://localhost:5050"
     let tableEndpoint = "/table"
     
     private init() {}
@@ -36,7 +35,7 @@ class CoronaRequest {
     func getGraphImage() -> UIImage {
         var imageOptional: UIImage?
         
-        let pathURL = URL(fileURLWithPath: pathChart).appendingPathComponent(chartEndpoint)
+        let pathURL = URL(fileURLWithPath: path).appendingPathComponent(chartEndpoint)
         
         do {
             let graphData = try Data(contentsOf: pathURL)
@@ -56,7 +55,7 @@ class CoronaRequest {
     func getData(completionHandler: @escaping (_ dataCodable: DataCodable) -> Void) {
         var dataCountries: DataCodable?
         
-        let pathURL = URL(fileURLWithPath: pathData).appendingPathComponent(tableEndpoint)
+        let pathURL = URL(fileURLWithPath: path).appendingPathComponent(tableEndpoint)
         
         do {
             let countryData = try Data(contentsOf: pathURL)
