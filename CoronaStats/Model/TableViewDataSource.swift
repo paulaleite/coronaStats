@@ -11,11 +11,11 @@ import UIKit
 
 class TableViewDataSource: NSObject, UITableViewDataSource {
     var nomePais = [String]()
-    var qtdRecuperados = [String]()
-    var qtdObtios = [String]()
-    var qtdCasosPorMilhao = [String]()
+    var qtdRecuperados = [Int]()
+    var qtdObtios = [Int]()
+    var qtdCasosPorMilhao = [Int]()
     
-    init(nomePais: [String], qtdRecuperados: [String], qtdObtios: [String], qtdCasosPorMilhao: [String]) {
+    init(nomePais: [String], qtdRecuperados: [Int], qtdObtios: [Int], qtdCasosPorMilhao: [Int]) {
         self.nomePais = nomePais
         self.qtdRecuperados = qtdRecuperados
         self.qtdObtios = qtdObtios
@@ -29,9 +29,9 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell") as? DataTVCell
-        cell?.recuperadosLabel.text = self.qtdRecuperados[indexPath.row]
-        cell?.obitosLabel.text = self.qtdObtios[indexPath.row]
-        cell?.casosPorMilhaoLabel.text = self.qtdCasosPorMilhao[indexPath.row]
+        cell?.recuperadosLabel.text = String(self.qtdRecuperados[indexPath.row])
+        cell?.obitosLabel.text = String(self.qtdObtios[indexPath.row])
+        cell?.casosPorMilhaoLabel.text = String(self.qtdCasosPorMilhao[indexPath.row])
         cell?.nomePaisLabel.text = self.nomePais[indexPath.row]
         
         guard let safeCell = cell else {

@@ -18,13 +18,34 @@ class CountryVC: UIViewController, ViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        showLoadingAlert()
+        showLoadingAlert()
         
-        self.tableViewDelegate = TableViewDelegate(withDelegate: self)
-        self.tableViewDataSource = TableViewDataSource(nomePais: ["Brasil", "EUA"], qtdRecuperados: ["214", "243"], qtdObtios: ["8", "20"], qtdCasosPorMilhao: ["3.7", "8.2"])
+        CoronaRequest.shared().getData { (dataCodable) in
+            DispatchQueue.main.async {
+                guard let countryNames = dataCodable.country
+                    else {
+                    return
+                }
+                guard let recovered = dataCodable.recovered else {
+                    return
+                }
+                guard let deaths = dataCodable.deaths else {
+                    return
+                }
+                guard let casesPerMillion = dataCodable.casesPerMillion else {
+                    return
+                }
+                
+                self.tableViewDelegate = TableViewDelegate(withDelegate: self)
+                self.tableViewDataSource = TableViewDataSource(nomePais: countryNames, qtdRecuperados: recovered, qtdObtios: deaths, qtdCasosPorMilhao: casesPerMillion)
+                
+                self.removeLoadingAlert()
+            }
+        }
         
         self.tableView.delegate = self.tableViewDelegate
         self.tableView.dataSource = self.tableViewDataSource
+        
     }
     
     func selectedCell(row: Int) {

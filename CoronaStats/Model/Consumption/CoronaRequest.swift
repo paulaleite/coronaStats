@@ -14,16 +14,18 @@ struct GraphCodable: Codable {
 }
 
 struct DataCodable: Codable {
-    var pais: String?
-    var recuperados: String?
-    var obitos: String?
-    var casosPorMilhao: String?
+    var country: [String]?
+    var recovered: [Int]?
+    var deaths: [Int]?
+    var casesPerMillion: [Int]?
 }
 
 class CoronaRequest {
     private static var _shared = CoronaRequest()
-    let path = "http://localhost:5050"
+    let pathChart = "http://localhost:5050"
     let chartEndpoint = "/chart"
+    let pathData = "http://localhost:5000"
+    let tableEndpoint = "/table"
     
     private init() {}
     
@@ -34,7 +36,7 @@ class CoronaRequest {
     func getGraphImage() -> UIImage {
         var imageOptional: UIImage?
         
-        let pathURL = URL(fileURLWithPath: path).appendingPathComponent(chartEndpoint)
+        let pathURL = URL(fileURLWithPath: pathChart).appendingPathComponent(chartEndpoint)
         
         do {
             let graphData = try Data(contentsOf: pathURL)
@@ -51,7 +53,22 @@ class CoronaRequest {
         
     }
     
-    func getData() {
-//        let pathURL = "localhost:"
+    func getData(completionHandler: @escaping (_ dataCodable: DataCodable) -> Void)  {
+        var dataCountries: DataCodable?
+        
+        let pathURL = URL(fileURLWithPath: pathData).appendingPathComponent(tableEndpoint)
+        
+        do {
+            let countryData = try Data(contentsOf: pathURL)
+            dataCountries = try JSONDecoder().decode(DataCodable.self, from: countryData)
+        } catch {
+            print("\(error.localizedDescription)")
+        }
+        
+        guard let data = dataCountries else {
+            return
+        }
+        
+        completionHandler(data)
     }
 }
