@@ -24,7 +24,7 @@ class CoronaRequest {
     private static var _shared = CoronaRequest()
     let pathChart = "http://localhost:5050"
     let chartEndpoint = "/chart"
-    let pathData = "http://localhost:5000"
+    let pathData = "http://localhost:5050"
     let tableEndpoint = "/table"
     
     private init() {}
@@ -68,7 +68,6 @@ class CoronaRequest {
         guard let data = dataCountries else {
             return
         }
-        
         completionHandler(data)
     }
 }

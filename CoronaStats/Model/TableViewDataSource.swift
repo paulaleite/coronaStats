@@ -15,7 +15,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     var qtdObtios = [Int]()
     var qtdCasosPorMilhao = [Int]()
     
-    init(nomePais: [String], qtdRecuperados: [Int], qtdObtios: [Int], qtdCasosPorMilhao: [Int]) {
+    func updateDataSource(nomePais: [String], qtdRecuperados: [Int], qtdObtios: [Int], qtdCasosPorMilhao: [Int]) {
         self.nomePais = nomePais
         self.qtdRecuperados = qtdRecuperados
         self.qtdObtios = qtdObtios

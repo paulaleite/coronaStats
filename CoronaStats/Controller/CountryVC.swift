@@ -18,6 +18,12 @@ class CountryVC: UIViewController, ViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableViewDelegate = TableViewDelegate(withDelegate: self)
+        self.tableViewDataSource = TableViewDataSource()
+        
+        self.tableView.delegate = self.tableViewDelegate
+        self.tableView.dataSource = self.tableViewDataSource
+        
         showLoadingAlert()
         
         CoronaRequest.shared().getData { (dataCodable) in
@@ -36,16 +42,13 @@ class CountryVC: UIViewController, ViewControllerDelegate {
                     return
                 }
                 
-                self.tableViewDelegate = TableViewDelegate(withDelegate: self)
-                self.tableViewDataSource = TableViewDataSource(nomePais: countryNames, qtdRecuperados: recovered, qtdObtios: deaths, qtdCasosPorMilhao: casesPerMillion)
+                self.tableViewDataSource?.updateDataSource(nomePais: countryNames, qtdRecuperados: recovered, qtdObtios: deaths, qtdCasosPorMilhao: casesPerMillion)
+                
+                self.tableView.reloadData()
                 
                 self.removeLoadingAlert()
             }
         }
-        
-        self.tableView.delegate = self.tableViewDelegate
-        self.tableView.dataSource = self.tableViewDataSource
-        
     }
     
     func selectedCell(row: Int) {
