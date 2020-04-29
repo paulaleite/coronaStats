@@ -28,7 +28,7 @@ class CountryVC: UIViewController, ViewControllerDelegate {
         
         CoronaRequest.shared().getData { (dataCodable) in
             DispatchQueue.main.async {
-                guard let countryNames = dataCodable.country
+                guard let countryNames = dataCodable.countries
                     else {
                     return
                 }

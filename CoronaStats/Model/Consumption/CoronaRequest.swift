@@ -14,7 +14,7 @@ struct GraphCodable: Codable {
 }
 
 struct DataCodable: Codable {
-    var country: [String]?
+    var countries: [String]?
     var recovered: [Int]?
     var deaths: [Int]?
     var casesPerMillion: [Int]?
@@ -53,7 +53,7 @@ class CoronaRequest {
         
     }
     
-    func getData(completionHandler: @escaping (_ dataCodable: DataCodable) -> Void)  {
+    func getData(completionHandler: @escaping (_ dataCodable: DataCodable) -> Void) {
         var dataCountries: DataCodable?
         
         let pathURL = URL(fileURLWithPath: pathData).appendingPathComponent(tableEndpoint)
