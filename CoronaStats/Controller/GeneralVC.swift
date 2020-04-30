@@ -22,5 +22,12 @@ class GeneralVC: UIViewController {
             self.removeLoadingAlert()
         }
     }
-
+    
+    @IBAction func countryNames(segue: UIStoryboardSegue) {
+        if let destination = segue.destination as? SelectCountriesTVC {
+            
+            print(destination.countryNamesString)
+        }
+    }
+    
 }

@@ -160,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="-663.768115942029" y="-137.27678571428569"/>
         </scene>
-        <!--GeneralVC-->
+        <!--Visão Geral-->
         <scene sceneID="Bha-FD-i4Y">
             <objects>
                 <viewController id="oes-mx-iJ4" customClass="GeneralVC" customModule="CoronaStats" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,33 +172,92 @@
                                 <rect key="frame" x="20.5" y="313.5" width="373" height="269"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visão Geral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE0-nb-sS7">
-                                <rect key="frame" x="20" y="94" width="167" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-LH-GFs" customClass="ChangeGraphButton" customModule="CoronaStats" customModuleProvider="target">
+                                <rect key="frame" x="177" y="668.5" width="60" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="37"/>
+                                </state>
+                                <connections>
+                                    <segue destination="prj-fh-P7r" kind="show" id="tF5-wt-Cyy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="AE0-nb-sS7" firstAttribute="top" secondItem="VRD-rg-6M9" secondAttribute="top" constant="50" id="BOf-i5-qOg"/>
+                            <constraint firstItem="v5b-LH-GFs" firstAttribute="height" secondItem="jci-IH-hOS" secondAttribute="height" multiplier="0.0669643" id="6PS-hf-kvA"/>
+                            <constraint firstItem="v5b-LH-GFs" firstAttribute="centerX" secondItem="VRD-rg-6M9" secondAttribute="centerX" id="ChN-8z-7KV"/>
+                            <constraint firstItem="v5b-LH-GFs" firstAttribute="width" secondItem="jci-IH-hOS" secondAttribute="width" multiplier="0.144928" id="Fop-qV-rWl"/>
                             <constraint firstItem="PBp-t7-Pob" firstAttribute="centerY" secondItem="jci-IH-hOS" secondAttribute="centerY" id="IEP-SN-95h"/>
-                            <constraint firstItem="VRD-rg-6M9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AE0-nb-sS7" secondAttribute="trailing" symbolic="YES" id="PJo-hP-jWG"/>
+                            <constraint firstItem="v5b-LH-GFs" firstAttribute="top" secondItem="PBp-t7-Pob" secondAttribute="bottom" constant="86" id="Vdc-8B-tLV"/>
                             <constraint firstItem="PBp-t7-Pob" firstAttribute="centerX" secondItem="jci-IH-hOS" secondAttribute="centerX" id="cf6-s7-2Am"/>
                             <constraint firstItem="PBp-t7-Pob" firstAttribute="height" secondItem="jci-IH-hOS" secondAttribute="height" multiplier="0.3" id="dPy-TS-xxv"/>
-                            <constraint firstItem="AE0-nb-sS7" firstAttribute="leading" secondItem="VRD-rg-6M9" secondAttribute="leading" constant="20" id="gUa-60-JQO"/>
                             <constraint firstItem="PBp-t7-Pob" firstAttribute="width" secondItem="jci-IH-hOS" secondAttribute="width" multiplier="0.9" id="jaG-FO-YcC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VRD-rg-6M9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="GeneralEmpty" selectedImage="GeneralFill" id="dxx-bF-CcQ"/>
+                    <navigationItem key="navigationItem" title="Visão Geral" id="oia-aH-Blh"/>
                     <connections>
                         <outlet property="graphImageView" destination="PBp-t7-Pob" id="74k-Rz-TwE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-hU-etH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-663.768115942029" y="-785.49107142857144"/>
+            <point key="canvasLocation" x="246.37681159420291" y="-785.49107142857144"/>
+        </scene>
+        <!--Selecione até 4 locais-->
+        <scene sceneID="153-ul-KKg">
+            <objects>
+                <tableViewController id="prj-fh-P7r" customClass="SelectCountriesTVC" customModule="CoronaStats" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JiT-5E-5NB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="countryListCell" id="pk7-9S-5Xp" customClass="CountriesTVCell" customModule="CoronaStats" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pk7-9S-5Xp" id="yyA-gD-ku1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome País" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjq-8z-TO7">
+                                            <rect key="frame" x="20" y="11.5" width="82" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xjq-8z-TO7" firstAttribute="leading" secondItem="yyA-gD-ku1" secondAttribute="leadingMargin" id="90J-mx-zGK"/>
+                                        <constraint firstItem="xjq-8z-TO7" firstAttribute="centerY" secondItem="yyA-gD-ku1" secondAttribute="centerY" id="fWF-7z-kvD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="countryNameLabel" destination="xjq-8z-TO7" id="Zpt-4B-4el"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="prj-fh-P7r" id="65q-qG-Gni"/>
+                            <outlet property="delegate" destination="prj-fh-P7r" id="OXE-Y2-2Ck"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Selecione até 4 locais" largeTitleDisplayMode="never" id="hoa-wv-PG2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZS3-CT-OlV">
+                            <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Q5y-Rv-Smf" kind="unwind" unwindAction="countryNamesWithSegue:" id="uMZ-N1-bcf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sF-lK-qmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Q5y-Rv-Smf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1092.753623188406" y="-785.49107142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dC5-rK-PkD">
@@ -210,7 +269,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="oes-mx-iJ4" kind="relationship" relationship="viewControllers" id="ur8-fM-4Am"/>
+                        <segue destination="jS6-Xf-G6C" kind="relationship" relationship="viewControllers" id="ur8-fM-4Am"/>
                         <segue destination="1aV-6N-U1c" kind="relationship" relationship="viewControllers" id="RsR-cJ-4Im"/>
                     </connections>
                 </tabBarController>
@@ -218,10 +277,31 @@
             </objects>
             <point key="canvasLocation" x="-1579" y="-462"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QcZ-Sc-Fgk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jS6-Xf-G6C" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="GeneralEmpty" selectedImage="GeneralFill" id="dxx-bF-CcQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="FHm-Y9-pzQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oes-mx-iJ4" kind="relationship" relationship="rootViewController" id="sgK-aM-ANW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ofA-kL-LsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663.768115942029" y="-785.49107142857144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CountryFill" width="30" height="30"/>
         <image name="GeneralEmpty" width="30" height="30"/>
         <image name="GeneralFill" width="30" height="30"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>
