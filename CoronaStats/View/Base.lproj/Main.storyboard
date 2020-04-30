@@ -249,7 +249,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZS3-CT-OlV">
                             <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="Q5y-Rv-Smf" kind="unwind" unwindAction="countryNamesWithSegue:" id="uMZ-N1-bcf"/>
+                                <segue destination="Q5y-Rv-Smf" kind="unwind" unwindAction="countryNames:" id="Mlj-ra-q6I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

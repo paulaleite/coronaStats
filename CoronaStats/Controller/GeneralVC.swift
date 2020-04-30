@@ -16,17 +16,24 @@ class GeneralVC: UIViewController {
         super.viewDidLoad()
         
         showLoadingAlert()
-        
-        DispatchQueue.main.async {
-            self.graphImageView.image = CoronaRequest.shared().getGraphImage()
-            self.removeLoadingAlert()
+        CoronaRequest.shared().getGraphImage(countries: ["Brazil", "USA", "UK", "Spain"]) { (img) in
+            DispatchQueue.main.async {
+                self.graphImageView.image = img
+                self.removeLoadingAlert()
+            }
         }
+        
     }
     
-    @IBAction func countryNames(segue: UIStoryboardSegue) {
-        if let destination = segue.destination as? SelectCountriesTVC {
-            
-            print(destination.countryNamesString)
+    @IBAction func countryNames(_ unwindsegue: UIStoryboardSegue) {
+        guard let selectCountriesVC = unwindsegue.source as? SelectCountriesTVC else {
+            return
+        }
+        
+        CoronaRequest.shared().getGraphImage(countries: selectCountriesVC.selected) { (img) in
+            DispatchQueue.main.async {
+                self.graphImageView.image = img
+            }
         }
     }
     
