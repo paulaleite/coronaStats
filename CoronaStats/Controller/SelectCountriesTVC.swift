@@ -11,6 +11,7 @@ import UIKit
 class SelectCountriesTVC: UITableViewController {
 
     var countryNamesString = [String]()
+    var selected = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,23 @@ class SelectCountriesTVC: UITableViewController {
         }
         
         return safeCell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return
+        }
+        
+        if cell.accessoryType == .none && selected.count < 4 {
+            selected.append(countryNamesString[indexPath.row])
+            cell.accessoryType = .checkmark
+        } else if cell.accessoryType == .checkmark {
+            selected.removeAll { (country) -> Bool in
+                return country == countryNamesString[indexPath.row]
+            }
+            cell.accessoryType = .none
+        }
+        
     }
 
 }
