@@ -22,5 +22,9 @@ class GeneralVC: UIViewController {
             self.removeLoadingAlert()
         }
     }
-
+    
+    @IBAction func addNewGraph(_ sender: Any) {
+        
+    }
+    
 }
