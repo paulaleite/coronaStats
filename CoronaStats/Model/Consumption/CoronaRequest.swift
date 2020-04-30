@@ -22,7 +22,7 @@ struct DataCodable: Codable {
 
 class CoronaRequest {
     private static var _shared = CoronaRequest()
-    let path = "http://localhost:8080"
+    let path = "http://coronaapi-env.eba-ivmpuh8v.us-east-1.elasticbeanstalk.com/"
     let chartEndpoint = "/chart"
     let tableEndpoint = "/table"
     
