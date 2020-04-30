@@ -180,7 +180,6 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="37"/>
                                 </state>
                                 <connections>
-                                    <action selector="addNewGraph:" destination="oes-mx-iJ4" eventType="touchUpInside" id="ycd-3G-L8J"/>
                                     <segue destination="prj-fh-P7r" kind="show" id="tF5-wt-Cyy"/>
                                 </connections>
                             </button>
@@ -249,10 +248,14 @@
                     <navigationItem key="navigationItem" title="Selecione até 4 locais" largeTitleDisplayMode="never" id="hoa-wv-PG2">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZS3-CT-OlV">
                             <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Q5y-Rv-Smf" kind="unwind" unwindAction="countryNamesWithSegue:" id="uMZ-N1-bcf"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sF-lK-qmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Q5y-Rv-Smf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1092.753623188406" y="-785.49107142857144"/>
         </scene>

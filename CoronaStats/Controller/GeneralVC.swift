@@ -23,8 +23,11 @@ class GeneralVC: UIViewController {
         }
     }
     
-    @IBAction func addNewGraph(_ sender: Any) {
-        
+    @IBAction func countryNames(segue: UIStoryboardSegue) {
+        if let destination = segue.destination as? SelectCountriesTVC {
+            
+            print(destination.countryNamesString)
+        }
     }
     
 }
